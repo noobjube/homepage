@@ -6,5 +6,8 @@ app = Flask(__name__)
 def deafult():
    return ("falsk response")
 
+@app.route("/ntfy")
+def ntfy():
+   return "ToDO"
 if __name__=="__main__":
     app.run()
