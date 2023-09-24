@@ -1,4 +1,4 @@
-function ntfy_msg(){
-    var text = document.getElementById('ntfy-text').value
-    
+function pihole(){
+    let hostname = location.hostname
+    location.replace("http://"+hostname+"/admin")
 }

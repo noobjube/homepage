@@ -12,6 +12,6 @@ def ntfy():
    if request.method == "POST":
       text = request.form['ntfy text']
       os.system('curl -d "'+text+'" http://home.pi:8081/PiAlerts')
-   return redirect("http://home.pi:8081")
+   return redirect("http://home.pi")
 if __name__=="__main__":
     app.run(debug = True,host='0.0.0.0',port=5000)
