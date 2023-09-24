@@ -1,3 +1,4 @@
-function ntfy_msg(text){
+function ntfy_msg(){
+    var text = document.getElementById('ntfy-text').value
     
 }

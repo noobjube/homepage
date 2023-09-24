@@ -3,8 +3,11 @@
     <title>My Homepage</title>
 <h1>
 Welcome to Hompage</h1>
+<p>You have reached here using hostname:</p>
+<p id="hostname"></p>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/cyborg/bootstrap.min.css" integrity="sha384-nEnU7Ae+3lD52AK+RGNzgieBWMnEfgTbRHIwEvp1XXPdqdO6uLTd/NwXbzboqjc2" crossorigin="anonymous">
-<script src="/static/script.js"></script>
+<script type="text/javascript" src="/static/script.js"></script>
+
 <style>
   textarea{
     resize: none;
@@ -18,14 +21,19 @@ Welcome to Hompage</h1>
     Start PC
   </button> 
   <div>
+  <form id="ntfy-form" method="POST">
     <label for="ntfy-text" class="form-label mt-4">Send Notification using NTFY</label>
     <div>
     <textarea placeholder="Some text here" rows="3" cols= "50"  name="ntfy text" id="ntfy-text"></textarea>
     </div>
-    <button class="btn btn-primary form-label mt-2" type="button" href="http://home.pi:8000/ntfy">Send!</button>
+    <button class="btn btn-primary form-label mt-2" type="submit">Send!</button>
   
   </div>
-  
-  
+</form>
+<script>
+  let hostname = location.hostname
+  // document.getElementById('hostname').innerHTML = hostname
+  document.getElementById('ntfy-form').action = "http://"+hostname+":5000/ntfy"
+</script>
 </body>
 </html>
