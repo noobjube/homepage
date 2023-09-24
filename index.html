@@ -1,33 +1,40 @@
 <!DOCTYPE html>
 <html>
     <title>My Homepage</title>
-<h1>
-Welcome to Hompage</h1>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/cyborg/bootstrap.min.css" integrity="sha384-nEnU7Ae+3lD52AK+RGNzgieBWMnEfgTbRHIwEvp1XXPdqdO6uLTd/NwXbzboqjc2" crossorigin="anonymous">
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-<script type="text/javascript" src="/static/script.js"></script>
+
 <style>
-  textarea{
-    resize: none;
-  }
+   textarea{
+     resize: none;
+   }
+   .parent{
+    display: flex;
+    flex-direction: column;
+    align-items: center
+   }
 </style>
-<body>
-    <button class="btn btn-primary" data-bs-toggle="offcanvas" onclick="pihole()" role="button" aria-controls="offcanvasExample">
-    Go to pihole admin console
-    </button>
-  <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" onclick="startpc()" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-    Start PC
-  </button> 
-  <div>
-  <form id="ntfy-form" method="POST">
-    <label for="ntfy-text" class="form-label mt-4">Send Notification using NTFY</label>
+<div class="parent">
+<h1>Welcome to Hompage</h1>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/cyborg/bootstrap.min.css" integrity="sha384-nEnU7Ae+3lD52AK+RGNzgieBWMnEfgTbRHIwEvp1XXPdqdO6uLTd/NwXbzboqjc2" crossorigin="anonymous">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script type="text/javascript" src="/static/script.js"></script>
+
+  <body>
+      <button class="btn btn-primary" data-bs-toggle="offcanvas" onclick="pihole()" role="button" aria-controls="offcanvasExample">
+      Go to pihole admin console
+      </button>
+    <button class="btn btn-primary mt-4" type="button" data-bs-toggle="offcanvas" onclick="startpc()" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+      Start PC
+    </button> 
     <div>
-    <textarea placeholder="Some text here" rows="3" cols= "50"  name="ntfy text" id="ntfy-text"></textarea>
+    <form id="ntfy-form" method="POST">
+      <label for="ntfy-text" class="form-label mt-4">Send Notification using NTFY</label>
+      <div>
+      <textarea placeholder="Some text here" rows="3" cols= "50"  name="ntfy text" id="ntfy-text"></textarea>
+      </div>
+      <button class="btn btn-primary form-label mt-2" type="submit">Send!</button>
+    
     </div>
-    <button class="btn btn-primary form-label mt-2" type="submit">Send!</button>
-  
-  </div>
-</form>
+  </form>
 <script>
   let hostname = location.hostname
   const host_str = "http://"+hostname
@@ -38,4 +45,5 @@ Welcome to Hompage</h1>
   hostname_req.send()
 </script>
 </body>
+</div>
 </html>
